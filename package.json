@@ -46,6 +46,6 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "shellies-ng": "^1.5.1"
+    "shellies-ng": "julienpouget/node-shellies-ng"
   }
 }

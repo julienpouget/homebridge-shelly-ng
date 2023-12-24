@@ -12,7 +12,9 @@ For the first generation, see [homebridge-shelly](https://github.com/alexryd/hom
 ## Supported devices
 
 * [Shelly Plus 1](https://shelly.cloud/shelly-plus-1/)
+* [Shelly Plus 1 Mini](https://www.shelly.com/en/products/shop/shelly-plus-1-mini/)
 * [Shelly Plus 1 PM](https://shelly.cloud/shelly-plus-1pm/)
+* [Shelly Plus 1 PM Mini](https://www.shelly.com/en/products/shop/shelly-plus-1-pm-mini)
 * [Shelly Plus 2 PM](https://shelly.cloud/shelly-plus-2pm/)
 * [Shelly Plus I4](https://shelly.cloud/shelly-plus-i4/)
 * [Shelly Plus Plug US](https://shelly.cloud/shelly-plus-plug-us/)
