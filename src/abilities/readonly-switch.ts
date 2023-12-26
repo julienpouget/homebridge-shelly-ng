@@ -1,5 +1,5 @@
 import { Perms } from 'homebridge';
-import { CharacteristicValue as ShelliesCharacteristicValue, Input } from 'shellies-ng';
+import { CharacteristicValue as ShelliesCharacteristicValue, Input } from '@jupgt/shellies-ng';
 
 import { Ability, ServiceClass } from './base';
 

@@ -1,6 +1,6 @@
 import { PlatformConfig } from 'homebridge';
 
-import { DeviceId } from 'shellies-ng';
+import { DeviceId } from '@jupgt/shellies-ng';
 
 export interface MdnsOptions {
   /**

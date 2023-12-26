@@ -13,7 +13,7 @@ import {
   DeviceIdentifiers,
   MdnsDeviceDiscoverer,
   Shellies,
-} from 'shellies-ng';
+} from '@jupgt/shellies-ng';
 
 import { CustomCharacteristics, createCharacteristics } from './utils/characteristics';
 import { CustomServices, createServices } from './utils/services';

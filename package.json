@@ -23,7 +23,10 @@
     "homebridge-plugin",
     "shelly"
   ],
-  "author": "Julien Pouget",
+  "author": "Alexander Rydén",
+  "contributors": [
+    "Julien Pouget"
+  ],
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/julienpouget/homebridge-shelly-ng/issues"
@@ -42,6 +45,6 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "shellies-ng": "@jupgt/shellies-ng"
+    "@jupgt/shellies-ng": "^1.6.1"
   }
 }

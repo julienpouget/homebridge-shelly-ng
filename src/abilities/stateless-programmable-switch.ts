@@ -1,4 +1,4 @@
-import { Input } from 'shellies-ng';
+import { Input } from '@jupgt/shellies-ng';
 
 import { Ability, ServiceClass } from './base';
 

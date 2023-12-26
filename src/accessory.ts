@@ -1,4 +1,4 @@
-import { DeviceId } from 'shellies-ng';
+import { DeviceId } from '@jupgt/shellies-ng';
 import { PlatformAccessory } from 'homebridge';
 
 import { Ability } from './abilities';

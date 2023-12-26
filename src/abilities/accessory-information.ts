@@ -1,4 +1,4 @@
-import { Device } from 'shellies-ng';
+import { Device } from '@jupgt/shellies-ng';
 
 import { Ability, ServiceClass } from './base';
 

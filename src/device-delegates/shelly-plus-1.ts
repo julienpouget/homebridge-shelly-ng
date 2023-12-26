@@ -2,7 +2,7 @@ import {
   ShellyPlus1,
   ShellyPlus1Ul,
   ShellyPlus1Mini,
-} from 'shellies-ng';
+} from '@jupgt/shellies-ng';
 
 import { DeviceDelegate } from './base';
 
