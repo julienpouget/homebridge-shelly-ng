@@ -28,12 +28,12 @@ type AccessoryUuid = string;
 /**
  * The name of this plugin.
  */
-export const PLUGIN_NAME = 'homebridge-shelly-ng';
+export const PLUGIN_NAME = '@jupgt/homebridge-shelly-ng';
 
 /**
  * The name of this homebridge platform.
  */
-export const PLATFORM_NAME = 'ShellyNG';
+export const PLATFORM_NAME = 'ShellyNG (@jupgt)';
 
 
 type DeviceDiscovererEvents = {
