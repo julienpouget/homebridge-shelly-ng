@@ -21,6 +21,8 @@ import { DeviceCache } from './utils/device-cache';
 import { DeviceDelegate } from './device-delegates';
 import { PlatformOptions } from './config';
 
+import EventEmitter from 'eventemitter3';
+
 type AccessoryUuid = string;
 
 /**
@@ -33,10 +35,22 @@ export const PLUGIN_NAME = 'homebridge-shelly-ng';
  */
 export const PLATFORM_NAME = 'ShellyNG';
 
+
+type DeviceDiscovererEvents = {
+  /**
+   * The 'discover' event is emitted when a device is discovered.
+   */
+  discover: (identifiers: DeviceIdentifiers) => void;
+  /**
+   * The 'error' event is emitted if an asynchronous error occurs.
+   */
+  error: (error: Error) => void;
+};
+
 /**
  * Utility class that "discovers" devices from the configuration options.
  */
-export class ConfigDeviceDiscoverer extends DeviceDiscoverer {
+export class ConfigDeviceDiscoverer extends EventEmitter<DeviceDiscovererEvents> implements DeviceDiscoverer {
   /**
    * @param options - The platform configuration options.
    * @param emitInterval - The interval, in milliseconds, to wait between each emitted device.
@@ -54,6 +68,7 @@ export class ConfigDeviceDiscoverer extends DeviceDiscoverer {
       if (opts.hostname) {
         await this.emitDevice({
           deviceId: id,
+          protocol: 'websocket',
           hostname: opts.hostname,
         });
       }
@@ -66,7 +81,7 @@ export class ConfigDeviceDiscoverer extends DeviceDiscoverer {
   protected emitDevice(identifiers: DeviceIdentifiers): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        this.handleDiscoveredDevice(identifiers);
+        this.emit('discover', identifiers);
         resolve();
       }, this.emitInterval);
     });
@@ -76,7 +91,7 @@ export class ConfigDeviceDiscoverer extends DeviceDiscoverer {
 /**
  * Utility class that "discovers" devices from a cache.
  */
-export class CacheDeviceDiscoverer extends DeviceDiscoverer {
+export class CacheDeviceDiscoverer extends EventEmitter<DeviceDiscovererEvents> implements DeviceDiscoverer {
   /**
    * @param deviceCache - The cached devices.
    * @param emitInterval - The interval, in milliseconds, to wait between each emitted device.
@@ -93,6 +108,7 @@ export class CacheDeviceDiscoverer extends DeviceDiscoverer {
     for (const d of this.deviceCache) {
       await this.emitDevice({
         deviceId: d.id,
+        protocol: 'websocket',
         hostname: d.hostname,
       });
     }
@@ -104,7 +120,7 @@ export class CacheDeviceDiscoverer extends DeviceDiscoverer {
   protected emitDevice(identifiers: DeviceIdentifiers): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        this.handleDiscoveredDevice(identifiers);
+        this.emit('discover', identifiers);
         resolve();
       }, this.emitInterval);
     });
